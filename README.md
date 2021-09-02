@@ -50,11 +50,40 @@ At the prompt, type a secure passphrase. For more information, see "Working with
 Now ```cat``` the key and enter it into the github.com settings ssh/gpg key  
 
 ```
-cat ~/.ssh/id_ed255519.pub
+ $ cat ~/.ssh/id_ed255519.pub
 ```
 
-## Using SSH connection
+## Testing Connection
 
+To test the ssh connection do the following.
+
+```
+ $ ssh -T git@github.com
+ # Attempts to ssh to GitHub
+```
+
+You may see a warning like this:
+
+```
+ > The authenticity of host 'github.com (IP ADDRESS)' can't be established.
+ > RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+ > Are you sure you want to continue connecting (yes/no)?
+```
+
+Verify that the fingerprint in the message you see matches GitHub's RSA public key fingerprint. If it does, then type yes:
+
+```
+ > Hi username! You've successfully authenticated, but GitHub does not
+ > provide shell access.
+```
+
+## Get a repo
+
+```
+$ git clone git@github.com:USERNAME/REPO.git
+```
+
+### HTTPS to SSH
 ```
  > git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
 ```
