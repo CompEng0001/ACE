@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Created By: yourname
+# Date Created: todays date
+# Version: 1.3
+
+
+# this script is designed to gather system statistics/status
+# Display help message
+
+VERSION="Version: 1.9"
+AUTHOR="Author: Seb Blair"
+RELEASED="Release Date: 2020-11-10"
+FILE="/var/log/systemStats.log"
+
+NUMPROCESSES=$(ps -e | wc -l | awk '{print "Total PIDS = " $1}')
+TEMP=$(vcgencmd measure_temp)
+ARMCLOCK=$(vcgencmd measure_clock arm | awk -F"=" '{print "arm =" $2/10^6 "GHz"}')
+CORES=$(cat /sys/devices/system/cpu/present)
+VOLT=$(vcgencmd measure_volts core)
+ARMMEM=$(vcgencmd get_mem arm)
+GPUMEM=$(vcgencmd get_mem gpu)
+FREEMEM=$(free -m | awk 'FNR == 2 {print $1 $7}' )
+IP=$(hostname -I | awk '{print $1}')
+
+if [ ! -e ${FILE} ]; then
+        touch ${FILE}
+fi
+
+NOW=$(date)
+echo ${NOW} ${NUMPROCESSES} ${TEMP} ${ARMCLOCK} "Cores: "${CORES} ${VOLT} ${ARMMEM} ${GPUMEM} "Available "${FREEMEM} "IPV4:"${IP} >> ${FILE}
+
+# end of script
