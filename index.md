@@ -8,6 +8,5 @@ Run this in a terminal
 
 
 ```
- $ wget https://www.compeng0001.github.io/ACE/temperature.sh | bash
-
+ $ wget https://raw.githubusercontent.com/CompEng0001/ACE/gh-pages/temperatures.sh | bash
 ```
