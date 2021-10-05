@@ -13,7 +13,7 @@ RELEASED="2021-10-05"
 
 USAGE(){
 	echo -e $1
-	echo -e "\nUsage: systemStas [-t temperature] [-i ipv4 address]"
+	echo -e "\nUsage: systemStats [-t temperature] [-i ipv4 address]"
 	echo -e "\t\t  [-v version]"
 	echo -e "\t\t  more information see man systemStats"
 }
@@ -23,7 +23,7 @@ if [ $# -lt 1 ];then
 	USAGE "Not enough arguments"
 	exit 1
 elif [ $# -gt 3 ];then 
-	USAGE "Too many argurmnets supplie"
+	USAGE "Too many argurmnets supplied"
 	exit 1
 elif [[ ( $1 == '-h' ) || ( $1 == '--help'  ) ]];then
 	USAGE "Help!"
