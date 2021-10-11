@@ -28,13 +28,13 @@ elif [ $# -gt 3 ];then
 elif [[ ( $1 == '-h' ) || ( $1 == '--help'  ) ]];then
 	USAGE "Help!"
 	exit 1
-fi 
+fi
 
 # frequently a scripts are written so that arguments can b passed in any order using 'flags'
 # With the flags method, some of the arguments can be made manadatory or optional
 # a:b (a is mandatory, b is optional) abc is all optional
 
-while getopts tiv OPTION 
+while getopts tiv OPTION
 do
 case ${OPTION}
 in
