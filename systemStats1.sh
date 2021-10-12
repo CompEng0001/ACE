@@ -1,11 +1,11 @@
 #! /usr/bin/
 # CREATED BY: Name
 # Date created: todays
-# Version 1
+# Version 2
 
 # this script is designed to gather system statistics
 AUTHOR="Seb"
-VERSION="1"
+VERSION="2"
 RELEASED="2021-10-05"
 
 
