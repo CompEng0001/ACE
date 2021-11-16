@@ -24,9 +24,9 @@ def CompletionTime(n, array):
             array[k][value], array[k][i] = array[k][i], array[k][value]
 
 if __name__ == '__main__':
-    n = 4
-    arr = [[int(i) for i in range(1, n+1)], [2, 0, 4, 5],
-           [3, 4, 2, 4], [0]*n, [0]*n, [0]*n]
+    n = 6
+    arr = [[int(i) for i in range(1, n+1)], [0,1,2,6,4,5,6],
+           [5, 20, 6, 2,15,12], [0]*n, [0]*n, [0]*n]
     arrangeArrival(n, arr)
     CompletionTime(n, arr)
     print("{:<15} {:<15} {:<15} {:<15} {:<15} {:<15}".format('PROCESS','ARRIVAL','BURST TIME','COMPLETION' ,'WAITING TIME','TURN AROUND'))

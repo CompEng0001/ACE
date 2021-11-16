@@ -35,8 +35,8 @@ def findavgTime( processes, n, bt):
 # Driver code
 if __name__ =="__main__":
     # process id's
-    processes = [ 1, 2, 3,4]
+    processes = [ 1, 2, 3, 4, 5, 6]
     n = len(processes)
     # Burst time of all processes
-    burst_time = [10, 5, 8,19]
+    burst_time = [5, 20, 6, 2, 15, 12]
     findavgTime(processes, n, burst_time)
