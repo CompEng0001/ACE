@@ -89,3 +89,11 @@ $ git clone git@github.com:USERNAME/REPO.git
 ```
 
 
+## SSH Config
+```
+Host github.com
+         HostName ssh.github.com
+         Port 443
+         User git
+         IdentityFile ~/.ssh/id_ed25519
+```
