@@ -38,7 +38,7 @@ while getopts tfdDcVmFivu OPTION
 do
 case ${OPTION}
 in
-t) TEMP=$(cat /sys/class/thermal/thermal_zone0/temp)
+t) TEMP=$(bash /home/pi/ACE/temperature.sh)
    echo ${TEMP};;
 f) COREFREQUENCY=$(cat /sys/devices/system/cpu/cpufreq/policy0/scaling_cur_freq)
    echo ${COREFREQUENCY};;
